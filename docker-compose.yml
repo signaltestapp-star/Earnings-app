@@ -1,0 +1,13 @@
+version: '3.8'
+services:
+  web:
+    build: .
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./wallets.db:/app/wallets.db
+    environment:
+      - WALLET_JWT_SECRET=change-me-jwt-secret
+      - WALLET_ADMIN_USER=admin
+      - WALLET_ADMIN_PASS=adminpass
+      - WALLET_DB=/app/wallets.db
